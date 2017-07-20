@@ -29,15 +29,3 @@ class JsonComposer(dict):
 
         else:
             raise ValueError('Trying to combine %s with %s but I do not know how to do this.' % (type(value1), type(value2)))
-
-
-if __name__ == '__main__':
-    exclusive1 = JsonComposer({'a': 1})
-    exclusive2 = JsonComposer({'b': 2})
-    recursive1 = JsonComposer({'c': {'d': 3}})
-    recursive2 = JsonComposer({'c': {'e': 4}})
-    list1 = JsonComposer({'f': [5, 6, 7]})
-    list2 = JsonComposer({'f': [8, 9, 10]})
-
-
-    print(exclusive1 + exclusive2 + recursive1 + recursive2 + list1 + list2)

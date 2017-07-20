@@ -21,8 +21,8 @@ class Query(JsonComposer):
 
 class Sort(JsonComposer):
 
-    def __init__(self, **kwargs):
-        super().__init__(sort=dict(**kwargs))
+    def __init__(self, field, order='desc'):
+        super().__init__(sort=[{field: {'order': order}}])
 
 
 # Full text queries
@@ -131,6 +131,3 @@ class Ids(Query):
     def __init__(self, ids, **kwargs):
         super().__init__({'ids': {'values': ids}}, **kwargs)
 
-if __name__ == '__main__':
-    a = Source('text_clean') + Exists('text_clean') + Term(user=123)
-    print(a)
