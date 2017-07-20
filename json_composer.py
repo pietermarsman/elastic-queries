@@ -19,11 +19,11 @@ class JsonComposer(dict):
 
     @staticmethod
     def combine_values(value1, value2):
-        if type(value1) is dict and type(value2) is dict:
+        if isinstance(value1, dict) and isinstance(value2, dict):
             # merge dicts
             return JsonComposer(value1) + JsonComposer(value2)
 
-        elif type(value1) is list and type(value2) is list:
+        elif isinstance(value1, list) and isinstance(value2, list):
             # merge lists
             return value1 + value2
 
