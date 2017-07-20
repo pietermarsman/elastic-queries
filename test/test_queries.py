@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from queries import Source, Query, Match, Sort
+from elastic_queries.query import Source, Match, Sort
 
 
 class TestQueries(TestCase):

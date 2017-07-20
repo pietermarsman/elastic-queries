@@ -1,4 +1,4 @@
-from json_composer import JsonComposer
+from elastic_queries.json_composer import JsonComposer
 
 
 class Source(JsonComposer):

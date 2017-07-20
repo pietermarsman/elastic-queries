@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from json_composer import JsonComposer
+from elastic_queries.json_composer import JsonComposer
 
 
 class TestJsonComposer(TestCase):
