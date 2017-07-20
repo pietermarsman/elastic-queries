@@ -1,6 +1,9 @@
 Composable elasticsearch queries
 ================================
 
+.. image:: https://badge.fury.io/py/elastic-queries.svg
+    :target: https://badge.fury.io/py/elastic-queries
+
 Elasticsearch queries can sometimes be difficult to create and manage. However, the structure of a query is consistent and consists of multiple independent parts. This package allows to create queries by adding several query components. 
 
 Lets see an example: 
