@@ -3,6 +3,8 @@ from json_composer import JsonComposer
 
 class Source(JsonComposer):
     def __init__(self, fields):
+        if type(fields) is not list:
+            fields = [fields]
         super().__init__(_source=fields)
 
 
