@@ -2,6 +2,7 @@ from unittest import TestCase
 
 from elastic_queries.json_composer import JsonComposer
 
+import json
 
 class TestJsonComposer(TestCase):
     def test_empty(self):
@@ -27,3 +28,16 @@ class TestJsonComposer(TestCase):
         self.assertIn(1, both['list'])
         self.assertIn(2, both['list'])
         self.assertEqual(len(both['list']), 2)
+
+    def test_additive_dicts(self):
+        dict1 = JsonComposer(dict={'a': 3})
+        dict2 = JsonComposer(dict={'b': 4})
+        both = dict1 + dict2
+        self.assertIn('a', both['dict'])
+        self.assertEqual(len(both['dict']), 2)
+
+    def test_json_repr(self):
+        obj = JsonComposer({'a': {'b': {'c': [1, 2, 3]}, 'd': 'b'}})
+        json_repr = str(obj)
+        obj2 = json.loads(json_repr)
+        self.assertEqual(obj, obj2)
