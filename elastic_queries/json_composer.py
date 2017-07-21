@@ -2,7 +2,6 @@ import json
 
 
 class JsonComposer(dict):
-
     def __add__(self, other):
         # merge keys
         for key in other:
@@ -28,4 +27,5 @@ class JsonComposer(dict):
             return value1 + value2
 
         else:
-            raise ValueError('Trying to combine %s with %s but I do not know how to do this.' % (type(value1), type(value2)))
+            raise ValueError(
+                'Trying to combine %s with %s but I do not know how to do this.' % (type(value1), type(value2)))

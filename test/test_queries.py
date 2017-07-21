@@ -4,7 +4,6 @@ from elastic_queries.query import Source, Match, Sort
 
 
 class TestQueries(TestCase):
-
     def test_source(self):
         q = Source('field')
         self.assertIn('_source', q)
@@ -32,10 +31,10 @@ class TestQueries(TestCase):
     def test_sort(self):
         q = Sort('post_date', order='asc')
         query = {
-            "sort" : [
+            "sort": [
                 {
-                    "post_date" : {
-                        "order" : "asc"
+                    "post_date": {
+                        "order": "asc"
                     }
                 }
             ]

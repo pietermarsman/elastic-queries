@@ -1,8 +1,8 @@
+import json
 from unittest import TestCase
 
 from elastic_queries.json_composer import JsonComposer
 
-import json
 
 class TestJsonComposer(TestCase):
     def test_empty(self):
